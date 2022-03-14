@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Radio Buttons</title>
+		<style>
+			strong {
+				color: red;
+				font-family: courier;
+			}
+			
+			main {
+				display: flex;
+				justify-content: center;
+				/*padding: 0px 30% 0px 0px*/
+			}
+			h2 {
+				text-align: center;
+			}
+			
+			div {
+				/*border: 1px solid black;*/
+			}
+			
+			/*a.navL:link {
+				color: grey;
+			}
+			
+			a.navL:visited {
+				color: grey;
+			}*/
+			
+			/*--- IDs ---*/
+			
+			#navigation {
+				width: 18%;
+			}
+			
+			#navigationContent {
+				display: flex;
+				justify-content: right;
+			}
+			
+			#navigationHeading {
+				text-align: center;
+				text-decoration: underline 2px;
+			}
+			
+			#content {
+				width: 80%;
+			}
+
+			/*--- Classes ---*/
+			
+			.note {
+				border-style: dashed;
+				border-width: 1px;
+				background-color: lightpink;
+			}
+			
+			.pageOutline {
+					/* the two commented out lines in the .pageOUtline class create the effect of creating a horizontal layout
+					between the header and the main elements within the page. this is not my desiredeffect, however could be 
+					incredibly useful if trying to create a vertical navigational menu akin to that found with the filters list 
+					of some online shops*/	
+				/*
+					display: flex;
+					justify-content: center;
+				*/
+				
+				background-color: lightgrey;
+				border: 2px solid black; 
+				width: 55%;
+				padding: 0px 3% 0px;
+			}
+			
+			.pageOutlineOuter {
+				display: flex;
+				justify-content: center;
+			}
+			
+			.navElem {
+				text-align: right;
+				padding: 5px 5px 5px 0px;
+			}
+			
+			.navElem a:Link {
+				color: #763778;
+				font-family: arial;
+				text-decoration: none;
+			}
+			
+			.navElem a:visited {
+				color: #763778;
+				text-decoration: none;
+			}
+			
+			.titleBreak {
+				width: 85%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pageOutlineOuter">
+			<div class="pageOutline">
+				<header>
+					<h1>Radio Buttons</h1>
+					<div style="width:250px;"><hr></div>
+					
+					<p>
+						A Radio button is a type of input class that can be added to a form.<br>
+						It is defined within the input's attributes using<strong>type="radio"</strong><br>
+						Radio buttons are a type checklist where only one item can be selected.<br>
+						The input's attribute <strong>name=""</strong> is what groups together the individual buttons.
+					</p>
+					<hr>
+				</header>
+				<main>
+					
+					<div id="navigation">
+						<h3 id="navigationHeading">Navigation</h3>
+
+						<div id="navigationContent">
+							<div>
+								<div class="navElem">
+									<a href="#goodForm" class="navL">Correctly Named Form</a>
+									<hr width="50%" align="right">
+								</div>
+								<div class="navElem">
+									<a href="#badForm" class="navL">Incorrectly Named Form</a>
+									<hr width="50%" align="right">
+								</div>
+								<div class="navElem">
+									<a href="#unamedForm" class="navL">Unamed Form</a>
+									<hr width="50%" align="right">
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					
+					<div id="content">
+						<div id="goodForm">
+						
+							<h2>Correctly Named Form Attributes:</h2>
+							<hr class="titleBreak">
+							
+							<p>
+								Below is a form split into two sections. The first three radio button inputs have been<br>
+								defined with the <strong>name="fav_language"</strong> and the last three with the <strong>name="fav_pizza"</strong><br>
+								this allows you to select one option from each group
+							</p>
+							
+							<!---Form with correctly named elements--->
+							<form>
+								<!---Language menu--->
+								<p>Choose your favorite Web language:</p>
+								<input type="radio" id="html" name="fav_language" value="HTML">
+								<label for="html">HTML</label><br>
+								
+								<input type="radio" id="css" name="fav_language" value="CSS">
+								<label for="css">CSS</label><br>
+								
+								<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+								<label for="javascript">JavaScript</label><br><br>
+								
+								<!---Pizza menu--->
+								<p>Choose your favourite pizza:</p>
+								<input type="radio" id="pepperoni" name="fav_pizza" value="Pepperoni~">
+								<label for="pepperoni">Pepperoni</label><br>
+								
+								<input type="radio" id="ham-mushroom" name="fav_pizza" value="HamAndMushroom">
+								<label for="ham-mushroom">Ham and Mushroom</label><br>
+								
+								<input type="radio" id="margherita" name="fav_pizza" value="Margherita">
+								<label for="margherita">Margherita</label><br><br>
+								
+								
+								<input type="submit" value="Submit">
+								<input type="reset">
+							</form>
+							<hr>
+						</div>
+						
+						<div id="badForm">
+							
+							<h2>Incorrectly Named Form Elements</h2>
+							<hr class="titleBreak">
+						
+							<p>
+								Below is the same code, except the 5th radio button (Ham and Mushroom) has been given<br>
+								<strong>name="fav_language"</strong> like the first three radio buttons. clicking on it will clear the top section<br>
+								and do nothing to the bottom section.
+							</p>
+							
+							<p>
+								<em class="note">NOTE! Form element names can be reused across different forms, however element IDs cannot.</em><br><br>
+								The below form still uses <strong>name="fav_lang"</strong> and <strong>name="fav_pizza"</strong> but the input id attributes<br>
+								and the label for attributes have all been updated.
+							</p>
+							
+							<p>
+								<em class="note">NOTE! names are relevant to the data being sent and processed by the form.</em><br><br>
+								when using multiple forms in one page,care should be taken with how the data is named and processed. <br>
+								Names should not be shared across separate data within a form.
+							</p>
+							
+								
+								<!---Form with incorrectly named elements--->
+							<form>
+								<!---Language menu--->
+								<p>Choose your favorite Web language:</p>
+								<input type="radio" id="html2" name="fav_language" value="HTML">
+								<label for="html2">HTML</label><br>
+								
+								<input type="radio" id="css2" name="fav_language" value="CSS">
+								<label for="css2">CSS</label><br>
+								
+								<input type="radio" id="javascript2" name="fav_language" value="JavaScript">
+								<label for="javascript2">JavaScript</label><br><br>
+								
+								<!---Incorrectly functioning pizza menu--->
+								<p>Choose your favourite pizza:</p>
+								<input type="radio" id="pepperoni2" name="fav_pizza" value="Pepperoni">
+								<label for="pepperoni2">Pepperoni</label><br>
+								
+								<input type="radio" id="ham-mushroom2" name="fav_language" value="HamAndMushroom">
+								<label for="ham-mushroom2">Ham and Mushroom</label><br>
+								
+								<input type="radio" id="margherita2" name="fav_pizza" value="Margherita">
+								<label for="margherita2">Margherita</label><br><br>
+								
+								
+								<input type="submit" value="Submit">
+								<input type="reset">
+							</form>
+						</div>
+						
+						<div id="unamedForm">
+							<h2>Unamed Radio Buttons</h2>
+							<hr class="titleBreak">
+							
+							<p>
+								Below is a form containing 6 unamed radio buttons, separated by a text input.<br>
+								The first three have been given <strong>class="formthing"</strong> for testing purposes. This form shows that only<br>
+								the <strong>name=""</strong> attribute has an effect ont he binding of radio buttons. Unamed radio buttons default <br>
+								to be individual ranges, thus they must be given a name to function effectively.
+							</p>
+							
+							
+							<form>
+								<input type="radio" id="f3b1" value="option1" class="formthing">
+								<label for="f3b1">Option 1</label><br>
+								
+								<input type="radio" id="f3b2" value="option2" class="formthing">
+								<label for="f3b2">Option 2</label><br>
+								
+								<input type="radio" id="f3b3" value="option3" class="formthing">
+								<label for="f3b3">Option 3</label><br>
+								
+								<label for="f3t1">Enter your text here:</label><br>
+								<input type="text" id="f3t1"><br>
+								
+								<input type="radio" id="f3b4" value="option4">
+								<label for="f3b4">Option 4</label><br>
+								
+								<input type="radio" id="f3b5" value="option5">
+								<label for="f3b5">Option 5</label><br>
+								
+								<input type="radio" id="f3b6" value="option6">
+								<label for="f3b6">Option 6</label><br>
+								<input type="submit">
+								<input type="reset">
+							</form>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>
